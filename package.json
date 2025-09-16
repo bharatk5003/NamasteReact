@@ -3,20 +3,21 @@
   "version": "1.0.0",
   "description": "Namaste React Course",
   "scripts": {
-    "start" : "parcel index.html",
-    "build" : "parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "Bharat Kumar",
   "license": "ISC",
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "parcel": "^2.15.4"
   },
-  "browserslist" : [
+  "browserslist": [
     "last 2 versions "
   ]
 }
