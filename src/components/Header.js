@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
+  //If no dependency array ==> useEffect is called on every render
+  useEffect(() => {
+    console.log("useEffect called");
+  }, []);
+
   return (
     <div className="heading">
       <div className="logo-container">
@@ -14,6 +20,9 @@ const Header = () => {
           <li>Cart</li>
         </ul>
       </div>
+      {/* <div className="login-button">
+        <button>Login</button>
+      </div> */}
     </div>
   );
 };
