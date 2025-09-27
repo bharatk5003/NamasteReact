@@ -3,14 +3,15 @@ import ".././index.css";
 
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 };
@@ -19,23 +20,33 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <h1>This is about page</h1>,
+      },
+      {
+        path: "/contact",
+        element: <h1>This is contact us page</h1>,
+      },
+      {
+        path: "/cart",
+        element: <h1>This is cart Page</h1>,
+      },
+      {
+        path: "/home",
+        element: <h1>This is home page</h1>,
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
+      },
+    ],
     errorElement: <Error />,
-  },
-  {
-    path: "/about",
-    element: <h1>This is about page</h1>,
-  },
-  {
-    path: "/contact",
-    element: <h1>This is contact us page</h1>,
-  },
-  {
-    path: "/cart",
-    element: <h1>This is cart Page</h1>,
-  },
-  {
-    path: "/home",
-    element: <h1>This is home page</h1>,
   },
 ]);
 
