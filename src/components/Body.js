@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { RESTAURANT_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -46,9 +47,14 @@ const Body = () => {
     console.log(resData);
     setFilteredRestaurants(resData);
   };
+  const onlineStatus = useOnlineStatus();
+  if (!onlineStatus) {
+    return <h1>you are offline , Turn on your Internet</h1>;
+  }
   if (allRestaurants.length === 0) {
     return <Shimmer />;
   }
+
   return (
     <div className="body">
       <div className="filter-restaurant">
