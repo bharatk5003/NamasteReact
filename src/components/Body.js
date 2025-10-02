@@ -12,7 +12,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    console.log("useEffect called");
+    // console.log("useEffect called");
     fetchRestaurant();
   }, []);
 

@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Header = () => {
   //If no dependency array ==> useEffect is called on every render
   useEffect(() => {
-    console.log("useEffect called");
+    // console.log("useEffect called");
   }, []);
 
   return (
