@@ -7,3 +7,7 @@ export const RESTAURANT_API =
 
 export const RESTAURANT_MENU =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.5796842&lng=88.414312&restaurantId=";
+
+export const SITE_KEY = "6LdCmyErAAAAAOvqhoO_RoXgC15XrcoTJCHZ7M96";
+
+export const SECRET_KEY = "6LdCmyErAAAAAH4-kmaIXiJI5hsYnx7EP0FYXfZj";
