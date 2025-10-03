@@ -1,4 +1,4 @@
-/* @import "tailwindcss"; */
+@import "tailwindcss"; 
 a {
   text-decoration: none;   /* removes underline */
   color: inherit;          /* takes parent’s color instead of default blue */
