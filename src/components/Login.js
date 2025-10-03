@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { SITE_KEY } from "../utils/constants";
+// import { SITE_KEY } from "../utils/constants";
+const SITE_KEY = "abcd";
 
 // keep in .env
 
