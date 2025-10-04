@@ -1,5 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import { CDN_URL } from "../utils/constants";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 const RestaurantCard = ({ resData }) => {
   const {
     name,
@@ -10,6 +12,7 @@ const RestaurantCard = ({ resData }) => {
     sla,
     locality,
   } = resData.info;
+  const data = useContext(UserContext);
   //   console.log(cuisines);
   // console.log(cloudinaryImageId);
   return (
@@ -29,6 +32,7 @@ const RestaurantCard = ({ resData }) => {
         </p>
         <p className="res-cuisines">{cuisines.join(", ")}</p>
         <p className="res-locality">{locality}</p>
+        <p className="font-bold">User: {data.loggedInUser}</p>
       </div>
     </div>
   );

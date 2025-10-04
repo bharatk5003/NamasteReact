@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   //If no dependency array ==> useEffect is called on every render
-  useEffect(() => {
-    // console.log("useEffect called");
-  }, []);
-
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
+  const data = useContext(UserContext);
+  console.log(data);
   return (
     <div className="heading">
       <div className="logo-container">
@@ -24,8 +26,8 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
-            <Link to="/cart">Cart</Link>
+          <li className="px-4 font-bold text-xl">
+            <Link to="/cart">Cart({cartItems.length})items</Link>
           </li>
           <li>
             <Link to="/grocery">Grocery</Link>
@@ -33,6 +35,7 @@ const Header = () => {
           <li>
             <Link to="/login">Login</Link>
           </li>
+          <li className="font-bold">{data.loggedInUser}</li>
         </ul>
       </div>
       {/* <div className="login-button">
