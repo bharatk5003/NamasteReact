@@ -1,0 +1,23 @@
+app: "NamasteReact"
+region: "asia-south1"
+language: "nodejs/20"
+settings:
+  nodejs:
+    common_js: true
+build:
+  builtin: "dockerfile"
+  ignorefile: ".gitignore"
+serverlessConfig:
+  PortMap:
+    - Name: "http"
+      Port: 8080
+      Protocol: "http"
+  Scaling:
+    AutoStop: false
+    Min: 1
+    Max: 1
+    MaxIdleTime: 300
+  Resources:
+    CPU: 0.5
+    MemoryMB: 512
+    MemoryMaxMB: 512
