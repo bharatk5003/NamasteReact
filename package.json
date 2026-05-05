@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Namaste React Course",
   "scripts": {
-    "start": "parcel index.html",
+    "dev": "parcel index.html",
     "build": "parcel build index.html",
+    "start": "node index.js",
     "test": "jest"
   },
   "author": "Bharat Kumar",
